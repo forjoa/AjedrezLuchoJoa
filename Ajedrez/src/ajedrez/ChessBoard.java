@@ -64,6 +64,13 @@ public class ChessBoard {
 			System.out.println();
 		}
 	}
+	
+	public static void move(int SCol, int SRow, int DCol, int DRow ){
+		char letra = board[SRow][SCol];
+		board[SRow][SCol] = board[DRow][DCol];
+		board[DRow][DCol] = letra;
+	}
+
 
 	
 

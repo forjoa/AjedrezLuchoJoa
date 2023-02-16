@@ -1,6 +1,6 @@
 package ajedrez;
 
-public class Metodos {
+public class Metodos extends ChessBoard{
 
 	public static int columna(String col) {
 		int num = 0;
@@ -39,7 +39,8 @@ public class Metodos {
 
 		}
 		return num;
-	}	
+	}
+	
 
 
 }
