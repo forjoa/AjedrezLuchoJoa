@@ -3,41 +3,42 @@ package ajedrez;
 public class Metodos {
 
 	public int columna(char col) {
+		int num = 0;
 		switch (col) {
 		case 'a':
-			col = (char) 49;
+			num = 1;
 			break;
 
 		case 'b':
-			col = (char) 50;
+			num = 2;
 			break;
 
 		case 'c':
-			col = (char) 51;
+			num = 3;
 			break;
 
 		case 'd':
-			col = (char) 52;
+			num = 4;
 			break;
 
 		case 'e':
-			col = (char) 53;
+			num = 5;
 			break;
 
 		case 'f':
-			col = (char) 54;
+			num = 6;
 			break;
 
 		case 'g':
-			col = (char) 55;
+			num = 7;
 			break;
 
 		case 'h':
-			col = (char) 56;
+			num = 8;
 			break;
 
 		}
-		return col;
+		return num;
 	}
 	
 
