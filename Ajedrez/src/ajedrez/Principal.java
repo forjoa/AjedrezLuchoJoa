@@ -17,8 +17,6 @@ public class Principal {
 		row = Integer.parseInt(coordenada.substring(1));
 		System.out.println(row);
 		
-		
-		
 	}
 
 }

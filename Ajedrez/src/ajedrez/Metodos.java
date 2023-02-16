@@ -2,38 +2,38 @@ package ajedrez;
 
 public class Metodos {
 
-	public int columna(char col) {
+	public static int columna(String col) {
 		int num = 0;
 		switch (col) {
-		case 'a':
+		case "a":
 			num = 1;
 			break;
 
-		case 'b':
+		case "b":
 			num = 2;
 			break;
 
-		case 'c':
+		case "c":
 			num = 3;
 			break;
 
-		case 'd':
+		case "d":
 			num = 4;
 			break;
 
-		case 'e':
+		case "e":
 			num = 5;
 			break;
 
-		case 'f':
+		case "f":
 			num = 6;
 			break;
 
-		case 'g':
+		case "g":
 			num = 7;
 			break;
 
-		case 'h':
+		case "h":
 			num = 8;
 			break;
 
