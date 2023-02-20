@@ -1,10 +1,15 @@
 package ajedrez;
 
-public class Peon implements Piezas{
+public class Peon extends Reina{
+
+	public Peon(boolean white) {
+		super(white);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
+		System.out.println("Este metodo");
 		
 	}
 
@@ -12,6 +17,10 @@ public class Peon implements Piezas{
 	public void comer() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "P";
 	}
 	
 }

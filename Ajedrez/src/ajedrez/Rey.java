@@ -1,6 +1,11 @@
 package ajedrez;
 
-public class Rey implements Piezas{
+public class Rey extends Reina{
+
+	public Rey(boolean white) {
+		super(white);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void move() {
@@ -12,6 +17,10 @@ public class Rey implements Piezas{
 	public void comer() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "K";
 	}
 
 }
