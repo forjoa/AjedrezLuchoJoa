@@ -1,5 +1,9 @@
 package ajedrez;
 
+/**
+*Poner comentarios de clase
+*@author Ester profe
+*/
 public class Alfil extends Reina{
 
 	public Alfil(boolean blanco) {
