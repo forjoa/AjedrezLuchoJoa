@@ -9,11 +9,15 @@ public class Principal {
 		int SCol;
 		int DRow;
 		int DCol;
+		Piezas pieza;
 		Scanner sc = new Scanner (System.in);
 		ChessBoard.initializeBoard();
 		String coordenada = "";
 		String destino = "";
 		String exit = "";
+		
+		
+		
 		
 		while(!exit.equals("n")) {
 			
@@ -25,13 +29,17 @@ public class Principal {
 			SRow = Integer.parseInt(coordenada.substring(1));
 			SCol = Metodos.columna(coordenada.substring(0,1));
 			
+			pieza = ChessBoard.getPiece(SCol, SRow);
+			System.out.println(pieza);
+			pieza.move();
 			System.out.println("Selecciona un Destino");
 			destino = sc.next();
 			
 			DRow = Integer.parseInt(destino.substring(1));
 			DCol = Metodos.columna(destino.substring(0,1));
 			
-			ChessBoard.move(SCol, SRow, DCol, DRow);
+			
+			
 			ChessBoard.displayBoard();
 			
 			System.out.println("Presione n para salir");

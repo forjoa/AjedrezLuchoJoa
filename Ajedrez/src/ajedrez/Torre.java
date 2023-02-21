@@ -2,14 +2,14 @@ package ajedrez;
 
 public class Torre extends Reina{
 
-	public Torre(boolean blanco) {
-		super(blanco);
+	public Torre(boolean white) {
+		super(white);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
+		System.out.println("Republica Argetina");
 		
 	}
 
@@ -17,6 +17,10 @@ public class Torre extends Reina{
 	public void comer() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "T";
 	}
 
 }
