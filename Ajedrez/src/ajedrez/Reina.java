@@ -1,11 +1,11 @@
 package ajedrez;
 
 public class Reina implements Piezas{
-	private boolean blanco;
+	private boolean white;
 	
-	//Constructor
-	public Reina(boolean blanco) {
-		this.blanco = blanco;
+	
+	public Reina(boolean white) {
+		this.white = white;
 	}
 
 	//Metodos
@@ -14,11 +14,20 @@ public class Reina implements Piezas{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void movePeon() {
+		
+		
+	}
 
 	@Override
 	public void comer() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public String toString(){
+		return "Q";
 	}
 
 }
