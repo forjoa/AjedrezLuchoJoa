@@ -8,7 +8,11 @@ public class Peon extends Reina{
 	}
 
 	@Override
-	public void move() {
+	public void move(int SCol, int SRow, int DCol, int DRow) {
+		//Comprobacion
+		
+		//move de ChessBoard cuando las comprobaciones esten bien
+		ChessBoard.move(SCol, SRow, DCol, DRow);
 		System.out.println("Este metodo");
 		
 	}
