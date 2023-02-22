@@ -1,6 +1,7 @@
 package ajedrez;
 
 public class ChessBoard {
+	static Piezas vacio = new CasillasVacias();
 
 	static Piezas[][] board = new Piezas[9][9];
 	
@@ -15,7 +16,7 @@ public class ChessBoard {
 	}
 
 	static void initializeBoard() {
-		Piezas vacio = new CasillasVacias();
+		//Piezas vacio = new CasillasVacias();
 		
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
@@ -111,7 +112,6 @@ public class ChessBoard {
 	
 	public static void move(int SCol, int SRow, int DCol, int DRow ){
 		Piezas pieza = board[SRow][SCol];
-		pieza.move();
 		board[SRow][SCol] = board[DRow][DCol];
 		board[DRow][DCol] = pieza;
 	}
