@@ -22,7 +22,7 @@ public class Principal {
 		while(!exit.equals("n")) {
 			
 			ChessBoard.displayBoard();
-			
+			//Seleccionar Pieza
 			System.out.println("Selecciona una pieza");
 			coordenada = sc.next();
 			
@@ -31,13 +31,14 @@ public class Principal {
 			
 			pieza = ChessBoard.getPiece(SCol, SRow);
 			System.out.println(pieza);
-			pieza.move();
+			//Seleccionar Destino
 			System.out.println("Selecciona un Destino");
 			destino = sc.next();
 			
 			DRow = Integer.parseInt(destino.substring(1));
 			DCol = Metodos.columna(destino.substring(0,1));
 			
+			pieza.move(SCol, SRow, DCol, DRow);
 			
 			
 			ChessBoard.displayBoard();

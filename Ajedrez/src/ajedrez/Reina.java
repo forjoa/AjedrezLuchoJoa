@@ -1,6 +1,6 @@
 package ajedrez;
 
-public class Reina implements Piezas{
+public class Reina implements Piezas {
 	private boolean white;
 	
 	
@@ -10,13 +10,12 @@ public class Reina implements Piezas{
 
 	//Metodos
 	@Override
-	public void move() {
+	public void move(int SCol, int SRow, int DCol, int DRow) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public void movePeon() {
-		
+	public void movePeon() {	
 		
 	}
 
