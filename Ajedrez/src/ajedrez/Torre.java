@@ -12,34 +12,12 @@ public class Torre extends Reina{
 		boolean libre = true;
 		//Comprobaciones
 		if (SRow == DRow) {
-			if(SCol < DCol) {
-				for (int i = SCol + 1; i <= DCol && libre != false; i++) {
-					if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
-						libre = false;
-					}
-				}			
-			}else {
-				for (int i = SCol - 1; i >= DCol && libre != false; i--) {
-					if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
-						libre = false;
-					}
-				}
-			}
+			
+			libre=Metodos.moveH(SCol, DCol, SRow, libre);
 			
 		}else if (SCol == DCol){
-			if(SRow < DRow) {
-				for (int i = SRow + 1; i <= DRow && libre != false; i++) {
-					if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
-						libre = false;
-					}
-				}	
-			}else {
-				for (int i = SRow - 1; i >= DRow && libre != false; i--) {
-					if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
-						libre = false;
-					}
-				}
-			}
+			System.out.println("Hola, diosito");
+			libre=Metodos.moveV(SCol, DCol, SRow, libre);
 		}else {
 			
 		}

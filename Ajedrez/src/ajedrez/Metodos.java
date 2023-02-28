@@ -1,6 +1,6 @@
 package ajedrez;
 
-public class Metodos extends ChessBoard{
+public class Metodos extends ChessBoard {
 
 	public static int columna(String col) {
 		int num = 0;
@@ -40,7 +40,44 @@ public class Metodos extends ChessBoard{
 		}
 		return num;
 	}
+
+	public static boolean moveH(int SCol, int DCol, int SRow, boolean libre) {
+
+		if (SCol < DCol) {
+			for (int i = SCol + 1; i <= DCol && libre != false; i++) {
+				if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+		} else {
+			for (int i = SCol - 1; i >= DCol && libre != false; i--) {
+				if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+		}
+		
+		return libre;
+	}
 	
-
-
+	
+	public static boolean moveV(int SRow, int DRow, int SCol, boolean libre) {
+		
+		if(SRow < DRow) {
+			for (int i = SRow + 1; i <= DRow && libre != false; i++) {
+				if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}	
+		}else {
+			for (int i = SRow - 1; i >= DRow && libre != false; i--) {
+				if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+		}
+		return libre;
+	}
+	
+	
 }
