@@ -2,6 +2,7 @@ package ajedrez;
 
 public class Metodos extends ChessBoard{
 
+	// metodo para cambiar las letras de las columnas a numeros 
 	public static int columna(String col) {
 		int num = 0;
 		switch (col) {
@@ -41,6 +42,41 @@ public class Metodos extends ChessBoard{
 		return num;
 	}
 	
+	// mover torre de manera horizontal
+	public static boolean moveH (int SCol, int SRow, int DCol, int DRow, boolean libre) {
+		if(SCol < DCol) {
+			for (int i = SCol + 1; i <= DCol && libre != false; i++) {
+				if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}			
+		}else {
+			for (int i = SCol - 1; i >= DCol && libre != false; i--) {
+				if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+		}
+		return libre;
+	}
+	
+	//mover torre de manera vertical 
+	public static boolean moveV (int SCol, int SRow, int DCol, int DRow, boolean libre) {
+		if(SRow < DRow) {
+			for (int i = SRow + 1; i <= DRow && libre != false; i++) {
+				if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}	
+		}else {
+			for (int i = SRow - 1; i >= DRow && libre != false; i--) {
+				if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+		}
+		return libre;
+	}
 
 
 }
