@@ -43,7 +43,8 @@ public class Metodos extends ChessBoard{
 	}
 	
 	// mover torre de manera horizontal
-	public static boolean moveH (int SCol, int SRow, int DCol, int DRow, boolean libre) {
+	public static void moveH (int SCol, int SRow, int DCol, int DRow) {
+		boolean libre = true;
 		if(SCol < DCol) {
 			for (int i = SCol + 1; i <= DCol && libre != false; i++) {
 				if (ChessBoard.getPiece(i, SRow) != ChessBoard.vacio) {
@@ -57,11 +58,14 @@ public class Metodos extends ChessBoard{
 				}
 			}
 		}
-		return libre;
+		if (libre) {
+			ChessBoard.move(SCol, SRow, DCol, DRow);
+		}
 	}
 	
 	//mover torre de manera vertical 
-	public static boolean moveV (int SCol, int SRow, int DCol, int DRow, boolean libre) {
+	public static void moveV (int SCol, int SRow, int DCol, int DRow) {
+		boolean libre = true;
 		if(SRow < DRow) {
 			for (int i = SRow + 1; i <= DRow && libre != false; i++) {
 				if (ChessBoard.getPiece(SCol, i) != ChessBoard.vacio) {
@@ -75,7 +79,9 @@ public class Metodos extends ChessBoard{
 				}
 			}
 		}
-		return libre;
+		if (libre) {
+			ChessBoard.move(SCol, SRow, DCol, DRow);
+		}
 	}
 
 
