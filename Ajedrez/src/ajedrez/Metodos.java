@@ -42,6 +42,9 @@ public class Metodos extends ChessBoard{
 		return num;
 	}
 	
+	/**
+	 * movimientos de la torre
+	 */	
 	// mover torre de manera horizontal
 	public static void moveH (int SCol, int SRow, int DCol, int DRow) {
 		boolean libre = true;
@@ -83,6 +86,60 @@ public class Metodos extends ChessBoard{
 			ChessBoard.move(SCol, SRow, DCol, DRow);
 		}
 	}
+	
+	/**
+	 * movimientos del alfil
+	 */
+	//abajo derecha (if) y arriba izquierda (else)
+	public static void abajoDer (int SCol, int SRow, int DCol, int DRow) {
+		boolean libre = true;
+		if (SRow < DRow) {
+			for(int i = SRow + 1, j = SCol; i <= DRow && libre != false; i++) {
+				j += 1;
+				if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}				
+			System.out.println("Abajo Derecha");
+		}else { // Arriba Izquierda
+			for(int i = SRow - 1, j = SCol; i >= DRow && libre != false; i--) {
+				j -= 1;
+				if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+			System.out.println("Arriba Izquierda");
+		}
+		if (libre) {
+			ChessBoard.move(SCol, SRow, DCol, DRow);
+		}
+	}
+	
+	//abajo izquierda (if) y arrida derecha (else)
+	public static void abajoIzq (int SCol, int SRow, int DCol, int DRow) {
+		boolean libre = true;
+		if(SRow < DRow) {
+			for(int i = SRow + 1, j = SCol; i <= DRow && libre != false; i++) {
+				j -= 1;
+				if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+			System.out.println("Abajo Izquierda");
+		}else { //Arriba Derecha
+			for(int i = SRow - 1, j = SCol; i >= DRow && libre != false; i--) {
+				j += 1;
+				if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+					libre = false;
+				}
+			}
+			System.out.println("Arriba Derecha");
+		}
+		if (libre) {
+			ChessBoard.move(SCol, SRow, DCol, DRow);
+		}
+	}
+	
 
 
 }
