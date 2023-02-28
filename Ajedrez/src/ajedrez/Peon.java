@@ -26,5 +26,10 @@ public class Peon extends Reina{
 	public String toString(){
 		return "P";
 	}
+
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

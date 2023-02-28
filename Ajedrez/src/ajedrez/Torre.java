@@ -12,14 +12,10 @@ public class Torre extends Reina{
 		boolean libre = true;
 		//Comprobaciones
 		if (SRow == DRow) {
-			
-			libre=Metodos.moveH(SCol, DCol, SRow, libre);
+			libre=Metodos.moveH(SCol, SRow, DCol, DRow, libre);
 			
 		}else if (SCol == DCol){
-			System.out.println("Hola, diosito");
-			libre=Metodos.moveV(SCol, DCol, SRow, libre);
-		}else {
-			
+			libre=Metodos.moveV(SCol, SRow, DCol, DRow, libre);
 		}
 		//Metodo Move
 		if (libre) {
