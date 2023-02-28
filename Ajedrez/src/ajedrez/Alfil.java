@@ -10,24 +10,53 @@ public class Alfil extends Peon{
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		boolean libre = true;
-		// abajo derecha
-		if (DCol-SCol==DRow-SRow) {
-			ChessBoard.move(SCol, SRow, DCol, DRow);
-			System.out.println("abajo derecha");
-			// abajo izquierda
-		}else if (SCol-DCol==DRow-SRow) {
-			ChessBoard.move(SCol, SRow, DCol, DRow);
-			System.out.println("abajo izquierda");
-			// arriba izquierda
-		}else if (SCol-DCol==SRow-DRow) {
-			ChessBoard.move(SCol, SRow, DCol, DRow);
-			System.out.println("arriba izquierda");
-			
-			// arriba derecha
-		}else if (DCol-SCol==SRow-DRow) {
-			ChessBoard.move(SCol, SRow, DCol, DRow);
-			System.out.println("arriba derecha");
-			
+		// Abajo Derecha Y Arriba Izquierda
+		if (DCol - SCol == DRow - SRow) {
+			// Abajo Derecha 
+			if (SRow < DRow) {
+				for(int i = SRow + 1, j = SCol; i <= DRow && libre != false; i++) {
+					j += 1;
+					if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+						libre = false;
+					}
+				}				
+				System.out.println("Abajo Derecha");
+			}else { // Arriba Izquierda
+				for(int i = SRow - 1, j = SCol; i >= DRow && libre != false; i--) {
+					j -= 1;
+					if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+						libre = false;
+					}
+				}
+				System.out.println("Arriba Izquierda");
+			}
+			if (libre) {
+				ChessBoard.move(SCol, SRow, DCol, DRow);
+			}
+			// Abajo Izquierda
+		}else if (SCol - DCol == DRow - SRow) {
+			if(SRow < DRow) {
+				for(int i = SRow + 1, j = SCol; i <= DRow && libre != false; i++) {
+					j -= 1;
+					if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+						libre = false;
+					}
+				}
+				System.out.println("Abajo Izquierda");
+				//Arriba Derecha
+			}else { 
+				for(int i = SRow - 1, j = SCol; i >= DRow && libre != false; i--) {
+					j += 1;
+					if (ChessBoard.getPiece(j, i) != ChessBoard.vacio) {
+						libre = false;
+					}
+				}
+				System.out.println("Arriba Derecha");
+			}
+			if (libre) {
+				ChessBoard.move(SCol, SRow, DCol, DRow);
+			}
+
 		}else {
 			System.out.println("no entró en ninguno");
 		}
