@@ -9,19 +9,16 @@ public class Torre extends Reina{
 
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
-		boolean libre = true;
 		//Comprobaciones
 		if (SRow == DRow) {
-			libre=Metodos.moveH(SCol, SRow, DCol, DRow, libre);
+			Metodos.moveH(SCol, SRow, DCol, DRow);
 			
 		}else if (SCol == DCol){
-			libre=Metodos.moveV(SCol, SRow, DCol, DRow, libre);
+			Metodos.moveV(SCol, SRow, DCol, DRow);
+			
+		}else {
+			System.out.println("se salio");
 		}
-		//Metodo Move
-		if (libre) {
-			ChessBoard.move(SCol, SRow, DCol, DRow);
-		}
-		
 	}
 
 	@Override
