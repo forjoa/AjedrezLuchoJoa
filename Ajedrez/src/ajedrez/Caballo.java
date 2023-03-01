@@ -8,7 +8,7 @@ public class Caballo implements Piezas{
 	}
 
 	@Override
-	public void move() {
+	public void move(int SCol, int SRow, int DCol, int DRow) {
 		// TODO Auto-generated method stub
 		
 	}
