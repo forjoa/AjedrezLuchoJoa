@@ -139,7 +139,5 @@ public class Metodos extends ChessBoard{
 			ChessBoard.move(SCol, SRow, DCol, DRow);
 		}
 	}
-	
-
 
 }
