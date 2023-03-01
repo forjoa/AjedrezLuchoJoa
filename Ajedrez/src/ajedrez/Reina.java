@@ -10,6 +10,7 @@ public class Reina implements Piezas {
 	// Metodos
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
+		System.out.println("metodo reina");
 		if (SRow == DRow) {
 			Metodos.moveH(SCol, SRow, DCol, DRow);
 			
