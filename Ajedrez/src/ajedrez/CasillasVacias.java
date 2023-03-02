@@ -1,9 +1,10 @@
 package ajedrez;
 
 public class CasillasVacias implements Piezas{
+	private String guiaCasillas;
 	
-	public void CasillasVacias() {
-		
+	public CasillasVacias(String guiaCasillas) {
+		this.guiaCasillas = guiaCasillas;
 	}
 
 	@Override
@@ -19,7 +20,8 @@ public class CasillasVacias implements Piezas{
 	}
 	
 	public String toString() {
-		return ".";
+		return guiaCasillas;
+		
 	}
 
 }

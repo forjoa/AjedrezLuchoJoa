@@ -1,7 +1,7 @@
 package ajedrez;
 
 public class ChessBoard {
-	static Piezas vacio = new CasillasVacias();
+	static Piezas vacio = new CasillasVacias(".");
 
 	static Piezas[][] board = new Piezas[9][9];
 	
@@ -23,6 +23,25 @@ public class ChessBoard {
 				board[i][j] = vacio;
 			}
 		}
+		
+	
+		Piezas A = new CasillasVacias("a");
+		Piezas B = new CasillasVacias("b");
+		Piezas C = new CasillasVacias("c");
+		Piezas D = new CasillasVacias("d");
+		Piezas E = new CasillasVacias("e");
+		Piezas F = new CasillasVacias("f");
+		Piezas G = new CasillasVacias("g");
+		Piezas H = new CasillasVacias("h");
+		Piezas uno = new CasillasVacias("1");
+		Piezas dos = new CasillasVacias("2");
+		Piezas tres = new CasillasVacias("3");
+		Piezas cuatro = new CasillasVacias("4");
+		Piezas cinco = new CasillasVacias("5");
+		Piezas seis = new CasillasVacias("6");
+		Piezas siete = new CasillasVacias("7");
+		Piezas ocho = new CasillasVacias("8");
+		
 		
 		Piezas T1 = new Torre(true);
 		Piezas T2 = new Torre(true);
@@ -58,7 +77,24 @@ public class ChessBoard {
 		Piezas p7 = new Peon(false);
 		Piezas p8 = new Peon(false);
 		
+		//coordinates
+		board[0][1] = A;
+		board[0][2] = B;
+		board[0][3] = C;
+		board[0][4] = D;
+		board[0][5] = E;
+		board[0][6] = F;
+		board[0][7] = G;
+		board[0][8] = H;
 		
+		board[1][0] = uno;
+		board[2][0] = dos;
+		board[3][0] = tres;
+		board[4][0] = cuatro;
+		board[5][0] = cinco;
+		board[6][0] = seis;
+		board[7][0] = siete;
+		board[8][0] = ocho;
 		
 					
 		//Initialize white pieces
