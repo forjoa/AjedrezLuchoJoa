@@ -156,6 +156,12 @@ public class ChessBoard {
 		Piezas pieza = board[SRow][SCol];
 		return pieza;
 	}
+	
+	public static void comer(int SCol, int SRow, int DCol, int DRow ){
+		Piezas pieza = board[SRow][SCol];
+		board[SRow][SCol] = vacio;
+		board[DRow][DCol] = pieza;
+	}
 
 
 

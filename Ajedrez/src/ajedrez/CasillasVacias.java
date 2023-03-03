@@ -24,4 +24,10 @@ public class CasillasVacias implements Piezas{
 		
 	}
 
+	@Override
+	public boolean isWhite() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

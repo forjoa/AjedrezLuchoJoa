@@ -4,7 +4,7 @@ public class Reina implements Piezas {
 	private boolean white;
 
 	public Reina(boolean white) {
-		this.white = white;
+		this.setWhite(white);
 	}
 
 	// Metodos
@@ -39,6 +39,14 @@ public class Reina implements Piezas {
 
 	public String toString() {
 		return "Q";
+	}
+
+	public boolean isWhite() {
+		return white;
+	}
+
+	public void setWhite(boolean white) {
+		this.white = white;
 	}
 
 }

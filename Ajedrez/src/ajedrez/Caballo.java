@@ -30,4 +30,9 @@ public class Caballo implements Piezas {
 		return "C";
 	}
 
+	@Override
+	public boolean isWhite() {
+		return white;
+	}
+
 }
