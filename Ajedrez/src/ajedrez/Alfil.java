@@ -28,12 +28,6 @@ public class Alfil extends Peon{
 		}
 		
 	}
-
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
 	 * method to print which piece the user is choosing

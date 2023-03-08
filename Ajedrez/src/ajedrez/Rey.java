@@ -35,12 +35,6 @@ public class Rey extends Reina {
 		}
 	}
 
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-
-	}
-
 	/**
 	 * method to know which piece is the user choosing
 	 */

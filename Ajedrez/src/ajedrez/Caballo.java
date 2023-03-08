@@ -27,12 +27,6 @@ public class Caballo implements Piezas {
 		}
 	}
 
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-
-	}
-
 	/**
 	 * method to print which piece the user is choosing
 	 * @return toString

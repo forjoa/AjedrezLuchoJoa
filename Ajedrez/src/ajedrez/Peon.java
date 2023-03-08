@@ -45,12 +45,6 @@ public class Peon extends Reina{
 		System.out.println("Este metodo");
 		
 	}
-
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public String toString(){
 		return "P";

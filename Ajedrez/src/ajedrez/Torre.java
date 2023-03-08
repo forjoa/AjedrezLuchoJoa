@@ -27,12 +27,6 @@ public class Torre extends Reina{
 			System.out.println("se salio");
 		}
 	}
-
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
 	 * method to print which piece the user is choosing

@@ -12,12 +12,6 @@ public class CasillasVacias implements Piezas{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public String toString() {
 		return guiaCasillas;

@@ -37,12 +37,6 @@ public class Reina implements Piezas {
 
 	}
 
-	@Override
-	public void comer() {
-		// TODO Auto-generated method stub
-
-	}
-
 	/**
 	 * getters y setters
 	 * @param white
