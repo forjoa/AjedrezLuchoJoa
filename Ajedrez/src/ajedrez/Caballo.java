@@ -7,6 +7,13 @@ public class Caballo implements Piezas {
 		this.white = white;
 	}
 
+	/**
+	 * move method of the piece horse
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		if (DRow == SRow || DCol == SCol) {
@@ -26,10 +33,18 @@ public class Caballo implements Piezas {
 
 	}
 
+	/**
+	 * method to print which piece the user is choosing
+	 * @return toString
+	 */
 	public String toString() {
 		return "C";
 	}
 
+	/**
+	 * method that returns the color of the piece 
+	 * @return white
+	 */
 	@Override
 	public boolean isWhite() {
 		return white;

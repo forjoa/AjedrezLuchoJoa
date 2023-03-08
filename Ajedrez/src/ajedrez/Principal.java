@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Principal {
 
 	public static void main(String[] args) {
+		
 		int SRow;
 		int SCol;
 		int DRow;
@@ -41,8 +42,6 @@ public class Principal {
 		System.out.println(jugadorUno);
 		System.out.println(jugadorDos);
 		
-		
-
 		while (!exit.equals("n")) {
 
 			ChessBoard.displayBoard();

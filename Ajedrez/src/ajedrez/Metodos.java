@@ -1,8 +1,12 @@
 package ajedrez;
 
 public class Metodos extends ChessBoard{
-
-	// metodo para cambiar las letras de las columnas a numeros 
+	
+	/**
+	 * method to change the char to numbers when we ask to the user
+	 * @param col
+	 * @return columna
+	 */
 	public static int columna(String col) {
 		int num = 0;
 		switch (col) {
@@ -43,9 +47,12 @@ public class Metodos extends ChessBoard{
 	}
 	
 	/**
-	 * movimientos de la torre
-	 */	
-	// mover torre de manera horizontal
+	 * horizontal movement of the rook 
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	public static void moveH (int SCol, int SRow, int DCol, int DRow) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
@@ -78,8 +85,14 @@ public class Metodos extends ChessBoard{
 			System.out.println("Hay una pieza en el camino!");
 		}
 	}
-	
-	//mover torre de manera vertical 
+	 
+	/**
+	 * vertical movement of the rook
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	public static void moveV (int SCol, int SRow, int DCol, int DRow) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
@@ -113,13 +126,18 @@ public class Metodos extends ChessBoard{
 	}
 	
 	/**
-	 * movimientos del alfil
+	 * descendent right movement of the bishop
+	 * ascendent left movement of the bishop
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
 	 */
-	//abajo derecha (if) y arriba izquierda (else)
 	public static void abajoDer (int SCol, int SRow, int DCol, int DRow) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
 		boolean libre = true;
+		// Abajo Derecha 
 		if (SRow < DRow) {
 			for(int i = SRow + 1, j = SCol; i < DRow && libre != false; i++) {
 				j += 1;
@@ -127,7 +145,6 @@ public class Metodos extends ChessBoard{
 					libre = false;
 				}
 			}
-			System.out.println("Abajo Derecha");
 		}else { // Arriba Izquierda
 			for(int i = SRow - 1, j = SCol; i > DRow && libre != false; i--) {
 				j -= 1;
@@ -135,7 +152,6 @@ public class Metodos extends ChessBoard{
 					libre = false;
 				}
 			}
-			System.out.println("Arriba Izquierda");
 		}
 		if (libre) {
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
@@ -152,11 +168,19 @@ public class Metodos extends ChessBoard{
 		}
 	}
 	
-	//abajo izquierda (if) y arrida derecha (else)
+	/**
+	 * descendent left movement of the bishop
+	 * ascendent right movement of the bishop
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	public static void abajoIzq (int SCol, int SRow, int DCol, int DRow) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
 		boolean libre = true;
+		// Arriba Izquierda
 		if(SRow < DRow) {
 			for(int i = SRow + 1, j = SCol; i < DRow && libre != false; i++) {
 				j -= 1;
@@ -164,7 +188,6 @@ public class Metodos extends ChessBoard{
 					libre = false;
 				}
 			}
-			System.out.println("Abajo Izquierda");
 		}else { //Arriba Derecha
 			for(int i = SRow - 1, j = SCol; i > DRow && libre != false; i--) {
 				j += 1;
@@ -172,7 +195,6 @@ public class Metodos extends ChessBoard{
 					libre = false;
 				}
 			}
-			System.out.println("Arriba Derecha");
 		}
 		if (libre) {
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
@@ -189,13 +211,18 @@ public class Metodos extends ChessBoard{
 		}
 	}
 	
-	
+	/**
+	 * horse starting with a large movement 
+	 * @param DRow
+	 * @param DCol
+	 * @param SRow
+	 * @param SCol
+	 */
 	public static void movimientoLargo(int DRow, int DCol, int SRow, int SCol) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
 		// Abajo Derecha Larga
 		if ((DRow + DCol) - (SRow + SCol) == 3) {
-			System.out.println("Abajo Derecha Larga");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -207,7 +234,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Abajo Izquierda Larga
 		} else if ((DRow + DCol) - (SRow + SCol) == 1) {
-			System.out.println("Abajo Izquierda Larga");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -219,7 +245,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Arriba Derecha Larga
 		} else if ((SRow + SCol) - (DRow + DCol) == 1) {
-			System.out.println("Arriba Derecha Larga");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -231,7 +256,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Arriba Izquierda Larga
 		} else if ((SRow + SCol) - (DRow + DCol) == 3) {
-			System.out.println("Arriba Izquierda Larga");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -244,13 +268,18 @@ public class Metodos extends ChessBoard{
 		}
 	}
 
-	
+	/**
+	 * horse starting with a short movement 
+	 * @param DRow
+	 * @param DCol
+	 * @param SRow
+	 * @param SCol
+	 */
 	public static void movimientoCorto(int DRow, int DCol, int SRow, int SCol) {
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
 		// Abajo Derecha Corta
 		if ((DRow + DCol) - (SRow + SCol) == 3) {
-			System.out.println("Abajo Derecha Corta");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -262,7 +291,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Abajo Izquierda Corta
 		} else if ((DRow + DCol) - (SRow + SCol) == 1) {
-			System.out.println("Abajo Izquierda Corta");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -274,7 +302,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Arriba Derecha Corta
 		} else if ((SRow + SCol) - (DRow + DCol) == 1) {
-			System.out.println("Arriba Derecha Corta");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {
@@ -286,7 +313,6 @@ public class Metodos extends ChessBoard{
 			}
 			// Arriba Izquierda Corta
 		} else if ((SRow + SCol) - (DRow + DCol) == 3) {
-			System.out.println("Arriba Izquierda Corta");
 			if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
 				ChessBoard.move(SCol, SRow, DCol, DRow);				
 			}else {

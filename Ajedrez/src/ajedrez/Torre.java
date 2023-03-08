@@ -7,6 +7,13 @@ public class Torre extends Reina{
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * move method of the piece rook
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		//Comprobaciones
@@ -27,6 +34,10 @@ public class Torre extends Reina{
 		
 	}
 	
+	/**
+	 * method to print which piece the user is choosing
+	 * @return toString
+	 */
 	public String toString(){
 		return "T";
 	}

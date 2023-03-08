@@ -7,7 +7,13 @@ public class Reina implements Piezas {
 		this.setWhite(white);
 	}
 
-	// Metodos
+	/**
+	 * general method "move" to make sure the movement of the Queen 
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		System.out.println("metodo reina");
@@ -37,16 +43,27 @@ public class Reina implements Piezas {
 
 	}
 
+	/**
+	 * getters y setters
+	 * @param white
+	 */
+	public void setWhite(boolean white) {
+		this.white = white;
+	}
+
+	/**
+	 * method to let the users know which piece are they choosing
+	 */
 	public String toString() {
 		return "Q";
 	}
 
+	/**
+	 * method to know the color of the peice 
+	 */
 	public boolean isWhite() {
 		return white;
 	}
 
-	public void setWhite(boolean white) {
-		this.white = white;
-	}
 
 }

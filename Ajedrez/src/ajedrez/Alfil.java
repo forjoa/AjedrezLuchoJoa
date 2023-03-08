@@ -7,6 +7,13 @@ public class Alfil extends Peon{
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * move method of the piece bishop
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		// Abajo Derecha Y Arriba Izquierda
@@ -28,6 +35,10 @@ public class Alfil extends Peon{
 		
 	}
 	
+	/**
+	 * method to print which piece the user is choosing
+	 * @return toString
+	 */
 	public String toString(){
 		return "A";
 	}

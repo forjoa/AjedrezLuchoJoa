@@ -1,12 +1,11 @@
 package ajedrez;
 
 public class ChessBoard {
-	static Piezas vacio = new CasillasVacias(".");
-
-	static Piezas[][] board = new Piezas[9][9];
 	
-	
+	public static Piezas vacio = new CasillasVacias(".");
 
+	public static Piezas[][] board = new Piezas[9][9];
+	
 	public static Piezas[][] getBoard() {
 		return board;
 	}
@@ -15,7 +14,10 @@ public class ChessBoard {
 		ChessBoard.board = board;
 	}
 
-	static void initializeBoard() {
+	/**
+	 * initialization of the board
+	 */
+	public static void initializeBoard() {
 		//Piezas vacio = new CasillasVacias();
 		
 		for (int i = 0; i < 9; i++) {
@@ -24,7 +26,6 @@ public class ChessBoard {
 			}
 		}
 		
-	
 		Piezas A = new CasillasVacias("a");
 		Piezas B = new CasillasVacias("b");
 		Piezas C = new CasillasVacias("c");
@@ -41,8 +42,7 @@ public class ChessBoard {
 		Piezas seis = new CasillasVacias("6");
 		Piezas siete = new CasillasVacias("7");
 		Piezas ocho = new CasillasVacias("8");
-		
-		
+				
 		Piezas T1 = new Torre(true);
 		Piezas T2 = new Torre(true);
 		Piezas C1 = new Caballo(true);
@@ -94,8 +94,7 @@ public class ChessBoard {
 		board[5][0] = cinco;
 		board[6][0] = seis;
 		board[7][0] = siete;
-		board[8][0] = ocho;
-		
+		board[8][0] = ocho;		
 					
 		//Initialize white pieces
 		board[1][1] = T1;
@@ -137,7 +136,10 @@ public class ChessBoard {
 
 	}
 
-	static void displayBoard() {
+	/**
+	 * print of the board 
+	 */
+	public static void displayBoard() {
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 9; j++) {
 				System.out.print(board[i][j] + " ");
@@ -146,17 +148,37 @@ public class ChessBoard {
 		}
 	}
 	
+	/**
+	 * general method "move" to make the method if everything is ok
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	public static void move(int SCol, int SRow, int DCol, int DRow ){
 		Piezas pieza = board[SRow][SCol];
 		board[SRow][SCol] = board[DRow][DCol];
 		board[DRow][DCol] = pieza;
 	}
 	
+	/**
+	 * method to know which piece the user is choosing 
+	 * @param SCol
+	 * @param SRow
+	 * @return
+	 */
 	public static Piezas getPiece(int SCol, int SRow) {
 		Piezas pieza = board[SRow][SCol];
 		return pieza;
 	}
 	
+	/**
+	 * general method "comer" when a piece can eat another of a different color
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	public static void comer(int SCol, int SRow, int DCol, int DRow ){
 		Piezas pieza = board[SRow][SCol];
 		board[SRow][SCol] = vacio;

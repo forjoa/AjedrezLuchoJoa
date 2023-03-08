@@ -7,6 +7,13 @@ public class Rey extends Reina {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * general method "move" to make sure the King is just moving 1 box
+	 * @param SCol
+	 * @param SRow
+	 * @param DCol
+	 * @param DRow
+	 */
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
 		if (DRow - SRow == 1 || DCol - SCol == 1 || SRow - DRow == 1 || SCol - DCol == 1) {
@@ -24,7 +31,7 @@ public class Rey extends Reina {
 
 			}
 		}else {
-			System.out.println("no se puede mover mas de una posicion");
+			System.out.println("No se puede mover mas de una posicion");
 		}
 	}
 
@@ -34,6 +41,9 @@ public class Rey extends Reina {
 
 	}
 
+	/**
+	 * method to know which piece is the user choosing
+	 */
 	public String toString() {
 		return "K";
 	}

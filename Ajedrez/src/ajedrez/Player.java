@@ -21,22 +21,39 @@ public class Player {
 		
 	}
 	
-	// getters y setters 
+	/**
+	 * getters y setters
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
+	/**
+	 * getters y setters
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean isWhite() {
-		return white;
-	}
+	/**
+	 * getters y setters
+	 */
 	public void setWhite(boolean white) {
 		this.white = white;
 	}
 	
+	/**
+	 * method to know the color 
+	 * @return white
+	 */
+	public boolean isWhite() {
+		return white;
+	}
+	
+	/**
+	 * method for the users to know which color are they using
+	 */
 	public String toString(){
-		return "nombre " + name + " white " + white;
+		return "Nombre primer jugador: " + name + ", si su color es blanco: " + white;
 	}
 
 }
