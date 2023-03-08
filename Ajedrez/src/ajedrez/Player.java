@@ -52,8 +52,18 @@ public class Player {
 	/**
 	 * method for the users to know which color are they using
 	 */
-	public String toString(){
-		return "Nombre primer jugador: " + name + ", si su color es blanco: " + white;
+	public String toString() {
+		String mensaje = "";
+		if (white) {
+
+			mensaje = "Tu nombre es " + name + " y tu color es blanco.";
+		}
+		if (!white) {
+
+			mensaje = "Tu nombre es " + name + " y tu color es negro.";
+		}
+
+		return mensaje;
 	}
 
 }
