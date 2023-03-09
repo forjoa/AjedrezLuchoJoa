@@ -13,51 +13,17 @@ public class Peon extends Reina {
 		Piezas select = ChessBoard.getPiece(SCol, SRow);
 		Piezas destino = ChessBoard.getPiece(DCol, DRow);
 		if (select.isWhite() == true && destino == ChessBoard.vacio) {
-			if (SCol == DCol && DRow > SRow && SRow == 2) {
-				if (DRow < 5) {
-					Metodos.moveV(SCol, SRow, DCol, DRow);
-				} else {
-					System.out.println("Movimiento prohibido");
-				}
-			} else if (SCol == DCol && DRow > SRow && DRow == SRow + 1) {
-				Metodos.moveV(SCol, SRow, DCol, DRow);
-			} else {
-				System.out.println("Movimiento prohibido");
-			}
-
+			Metodos.peonBlanco(DRow, DCol, SRow, SCol);
 		} else if (destino == ChessBoard.vacio) {
-			if (SCol == DCol && DRow < SRow && SRow == 7) {
-				if (DRow > 4) {
-					Metodos.moveV(SCol, SRow, DCol, DRow);
-				} else {
-					System.out.println("Movimiento prohibido");
-				}
-			} else if (SCol == DCol && DRow < SRow && DRow == SRow - 1) {
-				Metodos.moveV(SCol, SRow, DCol, DRow);
-			} else {
-				System.out.println("Movimiento prohibido");
-			}
+			Metodos.peonNegro(DRow, DCol, SRow, SCol);
 		} else {
 			System.out.println("Movimiento prohibido FINAL");
 			if (select.isWhite()) {
-				if ((SCol + 1 == DCol && SRow + 1 == DRow) || (SCol - 1 == DCol && SRow + 1 == DRow)) {
-					System.out.println("deberia comer ");
-					if (select.isWhite() != destino.isWhite()) {
-						ChessBoard.comer(SCol, SRow, DCol, DRow);
-					}
-				}
+				Metodos.comerPblanco(DRow, DCol, SRow, SCol);
 			} else if (!select.isWhite()){
-				if ((SCol + 1 == DCol && SRow - 1 == DRow) || (SCol - 1 == DCol && SRow - 1 == DRow)) {
-					System.out.println("deberia comer ");
-					if (select.isWhite() != destino.isWhite()) {
-						ChessBoard.comer(SCol, SRow, DCol, DRow);
-					}
-				}
+				Metodos.comerPnegro(DRow, DCol, SRow, SCol);
 			}
 		}
-
-		// move de ChessBoard cuando las comprobaciones esten bien
-		// ChessBoard.move(SCol, SRow, DCol, DRow);
 		System.out.println("Este metodo");
 
 	}
