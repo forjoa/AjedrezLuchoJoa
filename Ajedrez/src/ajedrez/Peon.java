@@ -1,6 +1,6 @@
 package ajedrez;
 
-public class Peon extends Reina{
+public class Peon extends Reina {
 
 	public Peon(boolean white) {
 		super(white);
@@ -9,50 +9,66 @@ public class Peon extends Reina{
 
 	@Override
 	public void move(int SCol, int SRow, int DCol, int DRow) {
-		//Comprobacion
+		// Comprobacion
 		Piezas select = ChessBoard.getPiece(SCol, SRow);
 		Piezas destino = ChessBoard.getPiece(DCol, DRow);
 		if (select.isWhite() == true && destino == ChessBoard.vacio) {
-			if (SCol == DCol && DRow > SRow && SRow == 2){
-				if(DRow < 5) {
-					Metodos.moveV(SCol, SRow, DCol, DRow);						
-				}else {
+			if (SCol == DCol && DRow > SRow && SRow == 2) {
+				if (DRow < 5) {
+					Metodos.moveV(SCol, SRow, DCol, DRow);
+				} else {
 					System.out.println("Movimiento prohibido");
 				}
-			}else if (SCol == DCol && DRow > SRow && DRow == SRow + 1) {
+			} else if (SCol == DCol && DRow > SRow && DRow == SRow + 1) {
 				Metodos.moveV(SCol, SRow, DCol, DRow);
-			}else {
+			} else {
 				System.out.println("Movimiento prohibido");
 			}
+
 		} else if (destino == ChessBoard.vacio) {
 			if (SCol == DCol && DRow < SRow && SRow == 7) {
-				if(DRow > 4) {
-					Metodos.moveV(SCol, SRow, DCol, DRow);						
-				}else {
+				if (DRow > 4) {
+					Metodos.moveV(SCol, SRow, DCol, DRow);
+				} else {
 					System.out.println("Movimiento prohibido");
 				}
-			}else if (SCol == DCol && DRow < SRow && DRow == SRow - 1) {
+			} else if (SCol == DCol && DRow < SRow && DRow == SRow - 1) {
 				Metodos.moveV(SCol, SRow, DCol, DRow);
-			}else {
+			} else {
 				System.out.println("Movimiento prohibido");
-			}	
-		}else {
+			}
+		} else {
 			System.out.println("Movimiento prohibido FINAL");
+			if (select.isWhite()) {
+				if ((SCol + 1 == DCol && SRow + 1 == DRow) || (SCol - 1 == DCol && SRow + 1 == DRow)) {
+					System.out.println("deberia comer ");
+					if (select.isWhite() != destino.isWhite()) {
+						ChessBoard.comer(SCol, SRow, DCol, DRow);
+					}
+				}
+			} else if (!select.isWhite()){
+				if ((SCol + 1 == DCol && SRow - 1 == DRow) || (SCol - 1 == DCol && SRow - 1 == DRow)) {
+					System.out.println("deberia comer ");
+					if (select.isWhite() != destino.isWhite()) {
+						ChessBoard.comer(SCol, SRow, DCol, DRow);
+					}
+				}
+			}
 		}
-		
-		//move de ChessBoard cuando las comprobaciones esten bien
-		//ChessBoard.move(SCol, SRow, DCol, DRow);
+
+		// move de ChessBoard cuando las comprobaciones esten bien
+		// ChessBoard.move(SCol, SRow, DCol, DRow);
 		System.out.println("Este metodo");
-		
+
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return "P";
 	}
 
 	public void move() {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 }
