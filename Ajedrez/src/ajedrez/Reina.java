@@ -33,10 +33,6 @@ public class Reina implements Piezas {
 
 	}
 
-	public void movePeon() {
-
-	}
-
 	/**
 	 * getters y setters
 	 * @param white

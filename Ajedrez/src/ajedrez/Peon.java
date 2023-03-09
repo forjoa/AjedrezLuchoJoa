@@ -32,9 +32,4 @@ public class Peon extends Reina {
 		return "P";
 	}
 
-	public void move() {
-		// TODO Auto-generated method stub
-
-	}
-
 }
