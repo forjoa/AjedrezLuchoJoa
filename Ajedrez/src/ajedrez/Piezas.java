@@ -17,4 +17,8 @@ public interface Piezas {
 	 */
 	public boolean isWhite();
 	
+	public void setComido(boolean comido);
+	
+	public boolean isComido();
+	
 }

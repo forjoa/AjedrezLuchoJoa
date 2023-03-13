@@ -31,7 +31,13 @@ public class Peon extends Reina {
 	}
 
 	public String toString() {
-		return "P";
+		String nombre;
+		if (isWhite()) {
+			nombre = "PB";
+		} else {
+			nombre = "PN";
+		}
+		return nombre;
 	}
 
 }

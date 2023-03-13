@@ -49,7 +49,13 @@ public class Reina implements Piezas {
 	 * method to let the users know which piece are they choosing
 	 */
 	public String toString() {
-		return "Q";
+		String nombre;
+		if (isWhite()) {
+			nombre = "QB";
+		} else {
+			nombre = "QN";
+		}
+		return nombre;
 	}
 
 	/**
@@ -57,6 +63,18 @@ public class Reina implements Piezas {
 	 */
 	public boolean isWhite() {
 		return white;
+	}
+
+	@Override
+	public void setComido(boolean comido) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isComido() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 

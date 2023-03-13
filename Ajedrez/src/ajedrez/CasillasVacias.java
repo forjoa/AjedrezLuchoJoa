@@ -25,4 +25,16 @@ public class CasillasVacias implements Piezas{
 		return false;
 	}
 
+	@Override
+	public void setComido(boolean comido) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isComido() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

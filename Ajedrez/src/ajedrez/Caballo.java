@@ -35,7 +35,13 @@ public class Caballo implements Piezas {
 	 * @return toString
 	 */
 	public String toString() {
-		return "C";
+		String nombre;
+		if (isWhite()) {
+			nombre = "PB";
+		} else {
+			nombre = "PN";
+		}
+		return nombre;
 	}
 
 	/**
@@ -45,6 +51,17 @@ public class Caballo implements Piezas {
 	@Override
 	public boolean isWhite() {
 		return white;
+	}
+
+	@Override
+	public void setComido(boolean comido) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public boolean isComido() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

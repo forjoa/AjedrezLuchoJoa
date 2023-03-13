@@ -36,7 +36,13 @@ public class Alfil extends Peon{
 	 * @return toString
 	 */
 	public String toString(){
-		return "A";
+		String nombre;
+		if (isWhite()) {
+			nombre = "PB";
+		} else {
+			nombre = "PN";
+		}
+		return nombre;
 	}
 	
 

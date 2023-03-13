@@ -1,10 +1,19 @@
 package ajedrez;
 
 public class Rey extends Reina {
+	
+	public boolean comido = false;
 
 	public Rey(boolean white) {
 		super(white);
-		// TODO Auto-generated constructor stub
+	}
+
+	public boolean isComido() {
+		return comido;
+	}
+
+	public void setComido(boolean comido) {
+		this.comido = comido;
 	}
 
 	/**
@@ -45,7 +54,13 @@ public class Rey extends Reina {
 	 * method to know which piece is the user choosing
 	 */
 	public String toString() {
-		return "K";
+		String nombre;
+		if (isWhite()) {
+			nombre = "KB";
+		} else {
+			nombre = "KN";
+		}
+		return nombre;
 	}
 
 }

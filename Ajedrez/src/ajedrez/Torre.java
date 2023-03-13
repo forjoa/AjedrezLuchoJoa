@@ -36,7 +36,13 @@ public class Torre extends Reina{
 	 * @return toString
 	 */
 	public String toString(){
-		return "T";
+		String nombre;
+		if (isWhite()) {
+			nombre = "TB";
+		} else {
+			nombre = "TN";
+		}
+		return nombre;
 	}
 
 }

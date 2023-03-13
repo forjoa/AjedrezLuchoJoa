@@ -2,7 +2,7 @@ package ajedrez;
 
 public class ChessBoard {
 	
-	public static Piezas vacio = new CasillasVacias(".");
+	public static Piezas vacio = new CasillasVacias(". ");
 
 	public static Piezas[][] board = new Piezas[9][9];
 	
@@ -26,14 +26,14 @@ public class ChessBoard {
 			}
 		}
 		
-		Piezas A = new CasillasVacias("a");
-		Piezas B = new CasillasVacias("b");
-		Piezas C = new CasillasVacias("c");
-		Piezas D = new CasillasVacias("d");
-		Piezas E = new CasillasVacias("e");
-		Piezas F = new CasillasVacias("f");
-		Piezas G = new CasillasVacias("g");
-		Piezas H = new CasillasVacias("h");
+		Piezas A = new CasillasVacias("a ");
+		Piezas B = new CasillasVacias("b ");
+		Piezas C = new CasillasVacias("c ");
+		Piezas D = new CasillasVacias("d ");
+		Piezas E = new CasillasVacias("e ");
+		Piezas F = new CasillasVacias("f ");
+		Piezas G = new CasillasVacias("g ");
+		Piezas H = new CasillasVacias("h ");
 		Piezas uno = new CasillasVacias("1");
 		Piezas dos = new CasillasVacias("2");
 		Piezas tres = new CasillasVacias("3");
@@ -179,14 +179,19 @@ public class ChessBoard {
 	 * @param DCol
 	 * @param DRow
 	 */
-	public static void comer(int SCol, int SRow, int DCol, int DRow ){
+	public static void comer(int SCol, int SRow, int DCol, int DRow){
 		Piezas pieza = board[SRow][SCol];
-		board[SRow][SCol] = vacio;
-		board[DRow][DCol] = pieza;
+		Piezas destino = board[DRow][DCol];
+		
+		if (destino.toString().equals("K")) {
+			destino.setComido(true);
+			board[SRow][SCol] = vacio;
+			board[DRow][DCol] = pieza;
+		} else {
+			board[SRow][SCol] = vacio;
+			board[DRow][DCol] = pieza;
+		}
+			
 	}
-
-
-
-	
 
 }

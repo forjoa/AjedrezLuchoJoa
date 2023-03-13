@@ -364,4 +364,22 @@ public class Metodos extends ChessBoard{
 		}
 		return correcto;
 	}
+	
+	public static boolean existeRey () {
+		Piezas ReyBlanco = new Rey (true);
+		Piezas ReyNegro = new Rey (false);
+		boolean existeRey = true;
+		int contRey = 0;
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (board[i][j]==ReyBlanco || board[i][j]==ReyNegro) {
+					contRey++;
+				}
+			}
+		}
+		if (contRey == 1) {
+			existeRey = false;
+		}
+		return existeRey;
+	}
 }
