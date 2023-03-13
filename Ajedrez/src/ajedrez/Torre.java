@@ -15,17 +15,20 @@ public class Torre extends Reina{
 	 * @param DRow
 	 */
 	@Override
-	public void move(int SCol, int SRow, int DCol, int DRow) {
+	public boolean move(int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		//Comprobaciones
 		if (SRow == DRow) {
-			Metodos.moveH(SCol, SRow, DCol, DRow);
+			correcto = Metodos.moveH(SCol, SRow, DCol, DRow);
 			
 		}else if (SCol == DCol){
-			Metodos.moveV(SCol, SRow, DCol, DRow);
+			correcto = Metodos.moveV(SCol, SRow, DCol, DRow);
 			
 		}else {
-			System.out.println("se salio");
+			System.out.println("Movimiento prohibido");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**

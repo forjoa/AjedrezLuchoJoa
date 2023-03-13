@@ -68,15 +68,17 @@ public class Principal {
 			}
 
 			System.out.println(pieza);
-			
-			// Seleccionar Destino
-			System.out.println("Selecciona un Destino");
-			destino = sc.next();
-
-			DRow = Integer.parseInt(destino.substring(1));
-			DCol = Metodos.columna(destino.substring(0, 1));
-
-			pieza.move(SCol, SRow, DCol, DRow);
+			boolean prueba = false;
+			do {
+				// Seleccionar Destino
+				System.out.println("Selecciona un Destino");
+				destino = sc.next();
+				
+				DRow = Integer.parseInt(destino.substring(1));
+				DCol = Metodos.columna(destino.substring(0, 1));
+				
+				prueba = pieza.move(SCol, SRow, DCol, DRow);				
+			}while(prueba == false); 
 
 			ChessBoard.displayBoard();
 

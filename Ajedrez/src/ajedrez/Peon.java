@@ -8,23 +8,25 @@ public class Peon extends Reina {
 	}
 
 	@Override
-	public void move(int SCol, int SRow, int DCol, int DRow) {
+	public boolean move(int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		// Comprobacion
 		Piezas select = ChessBoard.getPiece(SCol, SRow);
 		Piezas destino = ChessBoard.getPiece(DCol, DRow);
-		if (select.isWhite() == true && destino == ChessBoard.vacio) {
-			Metodos.peonBlanco(DRow, DCol, SRow, SCol);
-		} else if (destino == ChessBoard.vacio) {
-			Metodos.peonNegro(DRow, DCol, SRow, SCol);
-		} else {
-			System.out.println("Movimiento prohibido FINAL");
-			if (select.isWhite()) {
-				Metodos.comerPblanco(DRow, DCol, SRow, SCol);
-			} else if (!select.isWhite()){
-				Metodos.comerPnegro(DRow, DCol, SRow, SCol);
+		if (select.isWhite()) {
+			if(destino == ChessBoard.vacio) {
+				correcto = Metodos.peonBlanco(DRow, DCol, SRow, SCol);				
+			}else {
+				correcto = Metodos.comerPblanco(DRow, DCol, SRow, SCol);				
+			}
+		} else{
+			if(destino == ChessBoard.vacio) {
+				correcto = Metodos.peonNegro(DRow, DCol, SRow, SCol);				
+			}else {
+				correcto = Metodos.comerPnegro(DRow, DCol, SRow, SCol);				
 			}
 		}
-		System.out.println("Este metodo");
+		return correcto;
 
 	}
 

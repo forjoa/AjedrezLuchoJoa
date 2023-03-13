@@ -9,7 +9,7 @@ public interface Piezas {
 	 * @param DCol
 	 * @param DRow
 	 */
-	public void move(int SCol, int SRow, int DCol, int DRow);
+	public boolean move(int SCol, int SRow, int DCol, int DRow);
 
 	/**
 	 * method to know what color the piece is 

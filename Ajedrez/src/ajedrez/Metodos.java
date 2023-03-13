@@ -53,7 +53,8 @@ public class Metodos extends ChessBoard{
 	 * @param DCol
 	 * @param DRow
 	 */
-	public static void moveH (int SCol, int SRow, int DCol, int DRow) {
+	public static boolean moveH (int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		boolean libre = true;
 		if(SCol < DCol) {
 			for (int i = SCol + 1; i < DCol && libre != false; i++) {
@@ -70,10 +71,12 @@ public class Metodos extends ChessBoard{
 		}
 		
 		if (libre) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 		} else {
 			System.out.println("Hay una pieza en el camino!");
+			correcto = false;
 		}
+		return correcto;
 	}
 	 
 	/**
@@ -83,7 +86,8 @@ public class Metodos extends ChessBoard{
 	 * @param DCol
 	 * @param DRow
 	 */
-	public static void moveV (int SCol, int SRow, int DCol, int DRow) {
+	public static boolean moveV (int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		boolean libre = true;
 		if(SRow < DRow) {
 			for (int i = SRow + 1; i < DRow && libre != false; i++) {
@@ -99,10 +103,12 @@ public class Metodos extends ChessBoard{
 			}
 		}
 		if (libre) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 		} else {
 			System.out.println("Hay una pieza en el camino!");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -113,7 +119,8 @@ public class Metodos extends ChessBoard{
 	 * @param DCol
 	 * @param DRow
 	 */
-	public static void abajoDer (int SCol, int SRow, int DCol, int DRow) {
+	public static boolean abajoDer (int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		boolean libre = true;
 		// Abajo Derecha 
 		if (SRow < DRow) {
@@ -132,10 +139,12 @@ public class Metodos extends ChessBoard{
 			}
 		}
 		if (libre) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 		} else {
 			System.out.println("Hay una pieza en el camino!");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -146,7 +155,8 @@ public class Metodos extends ChessBoard{
 	 * @param DCol
 	 * @param DRow
 	 */
-	public static void abajoIzq (int SCol, int SRow, int DCol, int DRow) {
+	public static boolean abajoIzq (int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		boolean libre = true;
 		// Arriba Izquierda
 		if(SRow < DRow) {
@@ -165,10 +175,12 @@ public class Metodos extends ChessBoard{
 			}
 		}
 		if (libre) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 		} else {
 			System.out.println("Hay una pieza en el camino!");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -178,20 +190,25 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void movimientoLargo(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean movimientoLargo(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		// Abajo Derecha Larga
 		if ((DRow + DCol) - (SRow + SCol) == 3) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Abajo Izquierda Larga
 		} else if ((DRow + DCol) - (SRow + SCol) == 1) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Arriba Derecha Larga
 		} else if ((SRow + SCol) - (DRow + DCol) == 1) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Arriba Izquierda Larga
 		} else if ((SRow + SCol) - (DRow + DCol) == 3) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+		}else {
+			System.out.println("Error");
+			correcto = false;
 		}
+		return correcto;
 	}
 
 	/**
@@ -201,22 +218,25 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void movimientoCorto(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean movimientoCorto(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		// Abajo Derecha Corta
 		if ((DRow + DCol) - (SRow + SCol) == 3) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Abajo Izquierda Corta
 		} else if ((DRow + DCol) - (SRow + SCol) == 1) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Arriba Derecha Corta
 		} else if ((SRow + SCol) - (DRow + DCol) == 1) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 			// Arriba Izquierda Corta
 		} else if ((SRow + SCol) - (DRow + DCol) == 3) {
-			Metodos.pruebaColor(DRow, DCol, SRow, SCol);
+			correcto = Metodos.pruebaColor(DRow, DCol, SRow, SCol);
 		}else {
-			System.out.println("ERROR");				
+			System.out.println("ERROR");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -226,18 +246,22 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void peonBlanco(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean peonBlanco(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		if (SCol == DCol && DRow > SRow && SRow == 2) {
 			if (DRow < 5) {
 				Metodos.moveV(SCol, SRow, DCol, DRow);
 			} else {
 				System.out.println("Movimiento prohibido");
+				correcto = false;
 			}
 		} else if (SCol == DCol && DRow > SRow && DRow == SRow + 1) {
 			Metodos.moveV(SCol, SRow, DCol, DRow);
 		} else {
 			System.out.println("Movimiento prohibido");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -247,18 +271,22 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void peonNegro(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean peonNegro(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		if (SCol == DCol && DRow < SRow && SRow == 7) {
 			if (DRow > 4) {
 				Metodos.moveV(SCol, SRow, DCol, DRow);
 			} else {
 				System.out.println("Movimiento prohibido");
+				correcto = false;
 			}
 		} else if (SCol == DCol && DRow < SRow && DRow == SRow - 1) {
 			Metodos.moveV(SCol, SRow, DCol, DRow);
 		} else {
 			System.out.println("Movimiento prohibido");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -268,15 +296,23 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void comerPblanco(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean comerPblanco(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		Piezas select = ChessBoard.getPiece(SCol, SRow);
 		Piezas destino = ChessBoard.getPiece(DCol, DRow);
 		if ((SCol + 1 == DCol && SRow + 1 == DRow) || (SCol - 1 == DCol && SRow + 1 == DRow)) {
 			System.out.println("deberia comer ");
 			if (select.isWhite() != destino.isWhite()) {
 				ChessBoard.comer(SCol, SRow, DCol, DRow);
+			}else {
+				System.out.println("Movimiento prohibido");
+				correcto = false;
 			}
+		}else {
+			System.out.println("Movimiento prohibido");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -286,15 +322,23 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void comerPnegro(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean comerPnegro(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		Piezas select = ChessBoard.getPiece(SCol, SRow);
 		Piezas destino = ChessBoard.getPiece(DCol, DRow);
 		if ((SCol + 1 == DCol && SRow - 1 == DRow) || (SCol - 1 == DCol && SRow - 1 == DRow)) {
 			System.out.println("deberia comer ");
 			if (select.isWhite() != destino.isWhite()) {
 				ChessBoard.comer(SCol, SRow, DCol, DRow);
+			}else {
+				System.out.println("Movimiento prohibido");
+				correcto = false;
 			}
+		}else {
+			System.out.println("Movimiento prohibido");
+			correcto = false;
 		}
+		return correcto;
 	}
 	
 	/**
@@ -304,17 +348,20 @@ public class Metodos extends ChessBoard{
 	 * @param SRow
 	 * @param SCol
 	 */
-	public static void pruebaColor(int DRow, int DCol, int SRow, int SCol) {
+	public static boolean pruebaColor(int DRow, int DCol, int SRow, int SCol) {
+		boolean correcto = true;
 		Piezas pieza1 = ChessBoard.getPiece(DCol, DRow);
 		Piezas pieza2 = ChessBoard.getPiece(SCol, SRow);
-		if(ChessBoard.getPiece(DCol, DRow) == ChessBoard.vacio) {
+		if(pieza1 == ChessBoard.vacio) {
 			ChessBoard.move(SCol, SRow, DCol, DRow);				
 		}else {
 			if (pieza1.isWhite() != pieza2.isWhite()) {
 				ChessBoard.comer(SCol, SRow, DCol, DRow);
 			}else {
 				System.out.println("Es de tu mismo color!");
+				correcto = false;
 			}
 		}
+		return correcto;
 	}
 }

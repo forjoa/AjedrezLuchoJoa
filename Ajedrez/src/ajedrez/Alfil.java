@@ -15,18 +15,20 @@ public class Alfil extends Peon{
 	 * @param DRow
 	 */
 	@Override
-	public void move(int SCol, int SRow, int DCol, int DRow) {
+	public boolean move(int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		// Abajo Derecha Y Arriba Izquierda
 		if (DCol - SCol == DRow - SRow) {
-			Metodos.abajoDer(SCol, SRow, DCol, DRow);
+			correcto = Metodos.abajoDer(SCol, SRow, DCol, DRow);
 			// Abajo Izquierda
 		}else if (SCol - DCol == DRow - SRow) {
-			Metodos.abajoIzq(SCol, SRow, DCol, DRow);
+			correcto = Metodos.abajoIzq(SCol, SRow, DCol, DRow);
 
 		}else {
 			System.out.println("no entró en ninguno");
+			correcto = false;
 		}
-		
+		return correcto;
 	}
 	
 	/**

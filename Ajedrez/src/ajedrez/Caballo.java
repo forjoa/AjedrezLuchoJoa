@@ -15,16 +15,19 @@ public class Caballo implements Piezas {
 	 * @param DRow
 	 */
 	@Override
-	public void move(int SCol, int SRow, int DCol, int DRow) {
+	public boolean move(int SCol, int SRow, int DCol, int DRow) {
+		boolean correcto = true;
 		if (DRow == SRow || DCol == SCol) {
-			System.out.println("Error");
+			System.out.println("Movimiento Prohibido");
+			correcto = false;
 		} else {
 			if (DRow - 1 > SRow || DRow + 1 < SRow) {
-				Metodos.movimientoLargo(DRow,DCol,SRow,SCol);				
+				correcto = Metodos.movimientoLargo(DRow,DCol,SRow,SCol);				
 			} else {
-				Metodos.movimientoCorto(DRow,DCol,SRow,SCol);	
+				correcto = Metodos.movimientoCorto(DRow,DCol,SRow,SCol);	
 			}	
 		}
+		return correcto;
 	}
 
 	/**
