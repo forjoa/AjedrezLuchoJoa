@@ -8,8 +8,9 @@ public class CasillasVacias implements Piezas{
 	}
 
 	@Override
-	public void move(int SCol, int SRow, int DCol, int DRow) {
+	public boolean move(int SCol, int SRow, int DCol, int DRow) {
 		// TODO Auto-generated method stub
+		return false;
 		
 	}
 	
