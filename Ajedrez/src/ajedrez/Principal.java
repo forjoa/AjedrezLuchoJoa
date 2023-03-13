@@ -21,6 +21,7 @@ public class Principal {
 		boolean white = true;
 		Player jugadorDos = new Player();
 		Player jugadorUno = new Player ();
+		int counter = 1;
 
 		
 		System.out.println("Jugador 1, introduce tu nombre:");
@@ -45,15 +46,29 @@ public class Principal {
 		while (!exit.equals("n")) {
 
 			ChessBoard.displayBoard();
-			// Seleccionar Pieza
-			System.out.println("Selecciona una pieza");
-			coordenada = sc.next();
+			if(counter % 2 == 0) {
+				do {
+					// Seleccionar Pieza
+					System.out.println("Selecciona una pieza");
+					coordenada = sc.next();
+					SRow = Integer.parseInt(coordenada.substring(1));
+					SCol = Metodos.columna(coordenada.substring(0, 1));
+					pieza = ChessBoard.getPiece(SCol, SRow);	
+				}while (pieza.isWhite() == true);
+			}else {
+				do {
+					// Seleccionar Pieza
+					System.out.println("Selecciona una pieza");
+					coordenada = sc.next();
+					SRow = Integer.parseInt(coordenada.substring(1));
+					SCol = Metodos.columna(coordenada.substring(0, 1));
+					pieza = ChessBoard.getPiece(SCol, SRow);	
+				}while (pieza.isWhite() == false);
+				
+			}
 
-			SRow = Integer.parseInt(coordenada.substring(1));
-			SCol = Metodos.columna(coordenada.substring(0, 1));
-
-			pieza = ChessBoard.getPiece(SCol, SRow);
 			System.out.println(pieza);
+			
 			// Seleccionar Destino
 			System.out.println("Selecciona un Destino");
 			destino = sc.next();
@@ -65,8 +80,9 @@ public class Principal {
 
 			ChessBoard.displayBoard();
 
-			System.out.println("Presione n para salir");
+			System.out.println("Presione n para salir o Cualquier tecla para continuar");
 			exit = sc.next();
+			counter++;
 		}
 
 	}
